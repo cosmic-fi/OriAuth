@@ -19,8 +19,8 @@ yarn add ori-auth.
 To use this package, import it in your project:
   
 ```javascript
-const FirebaseAuth = require('your-package-name');
-const auth = new FirebaseAuth();
+const OriAuth = require('ori-auth');
+const auth = new OriAuth();
 ```
 
 **Configuration**
