@@ -47,12 +47,12 @@
   "author": "Cosmic-fi",
   "license": "CCANC",
   "bugs": {
-    "url": "https://github.com/cosmic-fi/Ori-Core-Java/issues"
+    "url": "https://github.com/cosmic-fi/OriAuth/issues"
   },
-  "homepage": "https://github.com/cosmic-fi/Ori-Core-Java#readme",
+  "homepage": "https://github.com/cosmic-fi/OriAuth#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:cosmic-fi/Ori-Core-Java.git"
+    "url": "git@github.com:cosmic-fi/OriAuth.git"
   },
   "devDependencies": {
     "adm-zip": "^0.5.10",
