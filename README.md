@@ -1,6 +1,6 @@
 # Ori-Auth
 
-Ori-Auth is a simple TypeScript npm package designed to handle Firebase authentication. It offers a set of easy-to-use functions for creating users, retrieving user data, logging in, resetting passwords, and logging out.
+Ori-Auth is a simple Javascrtipt npm package designed to handle Firebase authentication. It offers a set of easy-to-use functions for creating users, retrieving user data, logging in, resetting passwords, and logging out.
 
 ## Installation
 
@@ -15,44 +15,91 @@ or
 yarn add ori-auth.
 ```
 
-## Getting Started
-To begin using Ori-Auth in your project, follow these simple steps:
-
-1 - To begin using Ori-Auth in your project, follow these simple steps:
-
-```javascript
-const { OriAuth } = require('ori-auth');
-
-const oriAuth = new OriAuth();
-
-oriAuth.config({
-  firbaseappapi: 'your-api-key'
-});
-```
-
-
-2 - You're all set to use the functions provided by Ori-Auth for user authentication.
-
 ## Usage
-**Creating a User**
-- Create a new user with an email and password while saving their username and UID to Firestore:
-
+To use this package, import it in your project:
+  
 ```javascript
-const user = await oriAuth.createUser(email, password, username);
+const OriAuth = require('ori-auth');
+const auth = new OriAuth();
 ```
 
-**Getting User Data**
-Retrieve user data after logging them in with an email and password, including their username and UID stored in Firestore:
+**Configuration**
+To use this package, you need to configure it with your Firebase project details. 
+Pass your Firebase project configuration object to the config method:
 
 ```javascript
-const user = await oriAuth.getUser(email, password);
-```
-**Logging Out**
-Log out the currently authenticated user:
+const config = {
+  apiKey: 'your-api-key',
+  authDomain: 'your-auth-domain',
+  projectId: 'your-project-id',
+  storageBucket: 'your-storage-bucket',
+  messagingSenderId: 'your-messaging-sender-id',
+  appId: 'your-app-id',
+};
 
+auth.config(firebaseConfig);
+```
+
+## API Methods
+`createUser(email: string, password: string, username: string): Promise<string>`
+- Creates a new user with an email, password, and username. Returns the UID of the created user.
+
+`getUser(email: string, password: string): Promise<any>`
+- Logs in a user with an email and password, then retrieves the user's data from Firestore. Returns an object with the user's username and UID.
+
+`login(email: string, password: string): Promise<void>`
+- Logs in an existing user with an email and password.
+
+`resetPassword(email: string): Promise<void>`
+- Sends a password reset email to the given email address.
+
+`logout(): Promise<void>`
+- Logs the user out.
+
+## Example
 ```javascript
-await oriAuth.logout();
-```
+const OriAuth = require('ori-auth');
+const auth = new OriAuth();
 
+const config = {
+  apiKey: 'your-api-key',
+  authDomain: 'your-auth-domain',
+  projectId: 'your-project-id',
+  storageBucket: 'your-storage-bucket',
+  messagingSenderId: 'your-messaging-sender-id',
+  appId: 'your-app-id',
+};
+
+auth.config(config);
+
+async function run() {
+  try {
+    const uid = await auth.createUser('user@example.com', 'password123', 'myusername');
+    console.log('Created user with UID:', uid);
+
+    const userData = await auth.getUser('user@example.com', 'password123');
+    console.log('User data:', userData);
+
+    await auth.login('user@example.com', 'password123');
+    console.log('Logged in');
+
+    await auth.resetPassword('user@example.com');
+    console.log('Password reset email sent');
+
+    await auth.logout();
+    console.log('Logged out');
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+
+run();
+```
 ## License
-This project is licensed under the MIT License. For more details, please see the (LICENSE)[] file.
+
+This project is licensed under the MIT License. For more details, please see the [LICENSE][license-link] file.
+
+
+
+
+[license-link]: https://github.com/cosmic-fi/OriAuth/blob/main/LICENSE.md
