@@ -102,4 +102,4 @@ This project is licensed under the MIT License. For more details, please see the
 
 
 
-[license-link]: https://github.com/cosmic-fi/OriAuth/LICENSE.md
+[license-link]: https://github.com/cosmic-fi/OriAuth/blob/main/LICENSE.md
