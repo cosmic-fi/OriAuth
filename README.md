@@ -1,5 +1,7 @@
-# Ori-Auth
 
+<img src="https://github.com/cosmic-fi/OriAuth/assets/64766541/22785308-676b-485a-8ffb-e8327051a9ff" width="100%"/>
+
+## 
 Ori-Auth is a simple Javascrtipt npm package designed to handle Firebase authentication. It offers a set of easy-to-use functions for creating users, retrieving user data, logging in, resetting passwords, and logging out.
 
 ## Installation
@@ -102,8 +104,4 @@ This project is licensed under the MIT License. For more details, please see the
 
 
 
-<<<<<<< HEAD
 [license-link]: https://github.com/cosmic-fi/OriAuth/blob/main/LICENSE.md
-=======
-[license-link]: https://github.com/cosmic-fi/OriAuth/blob/main/LICENSE.md
->>>>>>> fe4c38ed90a0e184fcce02b3f6981bd368aa3a3a

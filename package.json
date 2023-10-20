@@ -1,6 +1,6 @@
 {
   "name": "ori-auth",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Ori-Auth is a simple Javascript npm package designed to handle Firebase authentication. It offers a set of easy-to-use functions for creating users, retrieving user data, logging in, resetting passwords, and logging out.",
   "main": "index.js",
   "dependencies": {
